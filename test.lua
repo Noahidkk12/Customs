@@ -1012,8 +1012,8 @@ local galaxySkyBrightConn = nil
 local galaxyPlanets = {}
 local galaxyBloom = nil
 local galaxyCC = nil
-local function enableRagdollTpLeft()
-    if RagdollTpLeft then return end
+local function enableRagdollTpUI()
+    if RagdollTpUI then return end
    
     originalSkybox = Lighting:FindFirstChildOfClass("Sky")
     if originalSkybox then originalSkybox.Parent = nil end
@@ -1061,7 +1061,7 @@ local function enableRagdollTpLeft()
     end
    
     galaxySkyBrightConn = RunService.Heartbeat:Connect(function()
-        if not Enabled.RagdollTpLeft then return end
+        if not Enabled.RagdollTpUI then return end
         local t = tick() * 0.5
         Lighting.Ambient = Color3.fromRGB(120 + math.sin(t) * 60, 50 + math.sin(t * 0.8) * 40, 180 + math.sin(t * 1.2) * 50)
         if galaxyBloom then
@@ -1070,7 +1070,7 @@ local function enableRagdollTpLeft()
     end)
 end
 
-local function disableRagdollTpLeft()
+local function disableRagdollTpUI()
     if galaxySkyBrightConn then galaxySkyBrightConn:Disconnect() galaxySkyBrightConn = nil end
     if galaxySkyBright then galaxySkyBright:Destroy() galaxySkyBright = nil end
     if originalSkybox then originalSkybox.Parent = Lighting end
@@ -1698,15 +1698,10 @@ createToggleWithKey(leftSide, 380, "Bat Aimbot", "BATAIMBOT", "BatAimbot", funct
     if s then startBatAimbot() else stopBatAimbot() end
 end, C.danger) -- Danger is now Gray
 
-createToggle(leftSide, 432, "Ragdoll Tp Left", "RagdollTpLeft", function(s)
-    Enabled.RagdollTpLeft = s
-    if s then enableRagdollTpLeft() else disableRagdollTpLeft() end
+createToggle(leftSide, 432, "Ragdoll Tp UI", "RagdollTpUI", function(s)
+    Enabled.RagdollTpUI = s
+    if s then enableRagdollTpUI() else disableRagdollTpUI() end
 end, Color3.fromRGB(200, 200, 200)) -- White/Gray instead of Purple
-
-createToggle(leftSide, 484, "Ragdoll Tp Right", "RagdollTpRight", function(s)
-    Enabled.RagdollTpRight = s
-    if s then enableRagdollTpRight() else disableRagdollTpRight() end
-end, Color3.fromRGB(200, 200, 200))
 
 -- Right side toggles - MONOCHROME ARGS
 createToggleWithKey(rightSide, 0, "Galaxy Mode", "GALAXY", "Galaxy", function(s)
