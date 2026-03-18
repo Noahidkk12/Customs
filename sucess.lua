@@ -159,7 +159,7 @@ local function createESP(plr)
 	local humanoid = c:FindFirstChildOfClass("Humanoid")
 	if humanoid then humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None end
 	local hitbox = Instance.new("BoxHandleAdornment")
-	hitbox.Name = "NightESP"
+	hitbox.Name = "VaultsESP"
 	hitbox.Adornee = charHrp
 	hitbox.Size = Vector3.new(4, 6, 2)
 	hitbox.Color3 = Color3.fromRGB(160, 0, 255)
