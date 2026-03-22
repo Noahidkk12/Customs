@@ -1627,7 +1627,7 @@ end)
 local ToggleBtn = Instance.new("TextButton", ScreenGui)
 ToggleBtn.Size = UDim2.new(0, s(80), 0, s(80))
 ToggleBtn.Position = isMobile and UDim2.new(1, -s(90), 0, s(10)) or UDim2.new(0.05, 0, 0.5, -s(40))
-ToggleBtn.BackgroundColor3 = THEME.FloatButton ToggleBtn.Text = "V" ToggleBtn.TextColor3 = THEME.Accent
+ToggleBtn.BackgroundColor3 = THEME.FloatButton ToggleBtn.Text = "VH" ToggleBtn.TextColor3 = THEME.Accent
 ToggleBtn.Font = Enum.Font.GothamBold ToggleBtn.TextSize = s(32) ToggleBtn.Active = true ToggleBtn.BorderSizePixel = 0
 Instance.new("UICorner", ToggleBtn).CornerRadius = UDim.new(0, s(16))
 local TBStroke = Instance.new("UIStroke", ToggleBtn) TBStroke.Color = THEME.Outline TBStroke.Thickness = 1
